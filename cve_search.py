@@ -6,7 +6,7 @@ from fuzzywuzzy import fuzz
 def load_cve_database(csv_file):
     try:
         df = pd.read_csv(csv_file)
-        if not all(col in df.columns for col in ['cve_id', 'description', 'cpe23uri']):
+        if not all(col in df.columns for col in ['CVE ID', 'description', 'cpe23uri']):
             raise ValueError("CSV file must contain 'cve_id', 'description', and 'cpe23uri' columns.")
         return df
     except Exception as e:
